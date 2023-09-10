@@ -1,7 +1,7 @@
 export default class OrderItem {
-    _id: number;
-    _name: string;
-    _price: number;
+    private _id: number;
+    private _name: string;
+    private _price: number;
 
     constructor(id: number, name: string, price: number) {
         this._id = id;
@@ -9,7 +9,7 @@ export default class OrderItem {
         this._price = price;
     }
 
+    get price(): number {
+        return this._price;
+    }
 }
-
-
-    
