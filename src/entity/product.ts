@@ -43,6 +43,8 @@ export default class Product {
         return this._price;
     }
 
+
+
     get name() {
         return this._name;
     }

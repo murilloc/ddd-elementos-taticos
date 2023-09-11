@@ -47,7 +47,6 @@ describe("Customer unit tests", () => {
         expect(customer.isActive).toBe(false);
     });
 
-
     it("should throw an error when address is undefined and a customer is activated", () => {
 
         expect(() => {
@@ -57,6 +56,15 @@ describe("Customer unit tests", () => {
             customer.activate();
             // Assert
         }).toThrowError("Address is required to activate a customer");
+    });
+
+    it("should add reward points", () => {
+        const customer = new Customer("123", "Customer A");
+        expect(customer.rewardPoints).toBe(0);
+        customer.addRewardPoints(100);
+        expect(customer.rewardPoints).toBe(100);
+        customer.addRewardPoints(100);
+        expect(customer.rewardPoints).toBe(200);
     });
 
 });
